@@ -1,0 +1,20 @@
+spring.jpa:
+  database: H2
+  show-sql: true
+  generate-ddl: true
+  hibernate:
+    ddl-auto: create-drop
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+      database-platform: org.hibernate.dialect.H2Dialect
+
+spring.datasource:
+  driver-class-name: org.h2.Driver
+  url: jdbc:h2:mem:myDb;DB_CLOSE_DELAY=-1;MODE=MYSQL;INIT=CREATE SCHEMA dbo
+  username: sa
+  password:
+
+spring.h2.console:
+  enabled: true
+  path: /h2
