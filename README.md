@@ -5,6 +5,9 @@ Endpoints:
 
 
 &nbsp;
+Obs.: Token dura 10 minutos!
+
+&nbsp;
 Não precisam do token:
 
 
@@ -14,7 +17,7 @@ Não precisam do token:
 
 &nbsp;
 /login : Efetua o login com os dados do jogador.
-         Obs.: No login, é gerado um bearer token, para ser usado, nós outro endpoints.
+         Obs.: No login, é gerado um bearer token, para ser usado, nos outro endpoints.
          Seleciona na aba Authorization do postman, o type: Bearer Toke. Cola o token, no campo Token!
 
 
@@ -35,3 +38,7 @@ Precisam do token:
 
 &nbsp;
 /stop : O jogador que quiser parar, é excluído da partida.
+
+
+&nbsp;
+# Para mais informações, consultar o Swagger!
