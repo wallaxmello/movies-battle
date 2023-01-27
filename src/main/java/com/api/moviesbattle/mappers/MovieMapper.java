@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface MovieMapper {
+    public List<MovieDTO> convertMovieListToMovieDtoList(List<Movie> movieList);
     List<Movie> convertMovieDtoListToMovieList(List<MovieDTO> movieDtoList);
     List<MovieDTO> convertMovieArrayListToMovieDtoList(List<MovieDTO[]> movieArrayList);
     Page<MovieDTO> convertListToPage(Pageable pageable, List<MovieDTO> movieDtoList);

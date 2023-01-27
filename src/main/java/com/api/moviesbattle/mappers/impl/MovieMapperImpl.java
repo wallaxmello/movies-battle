@@ -16,6 +16,21 @@ import java.util.List;
 public class MovieMapperImpl implements MovieMapper {
 
     @Override
+    public List<MovieDTO> convertMovieListToMovieDtoList(List<Movie> movieList) {
+        List<MovieDTO> movieDtoList = new ArrayList<>();
+        for(var entity : movieList) {
+            movieDtoList.add(new MovieDTO(
+                    entity.getImdbId(),
+                    entity.getTitle(),
+                    entity.getYear(),
+                    entity.getType(),
+                    entity.getPoster()
+            ));
+        }
+        return movieDtoList;
+    }
+
+    @Override
     public List<Movie> convertMovieDtoListToMovieList(List<MovieDTO> movieDtoList) {
         List<Movie> movieList = new ArrayList<>();
         for(var dto : movieDtoList) {

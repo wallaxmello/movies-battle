@@ -24,4 +24,15 @@ public class MovieDTO implements Serializable {
     private String type;
     @JsonProperty("Poster")
     private String poster;
+
+    @Override
+    public String toString() {
+        return "{" +
+                "imdbId='" + imdbId + '\'' +
+                ", title='" + title + '\'' +
+                ", year='" + year + '\'' +
+                ", type='" + type + '\'' +
+                ", poster='" + poster + '\'' +
+                "}\n";
+    }
 }

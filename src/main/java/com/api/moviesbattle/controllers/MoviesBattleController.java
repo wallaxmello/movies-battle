@@ -7,6 +7,7 @@ import com.api.moviesbattle.services.MovieService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.RouterOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import org.springframework.web.client.HttpClientErrorException;
 public class MoviesBattleController {
     private final MovieService movieService;
 
+    @Operation(summary = "Search movies", security = {@SecurityRequirement(name = "bearer-key")})
     @GetMapping("/movies")
     public ResponseEntity<Object> getMovies(@PageableDefault(page = 0, size = 2) Pageable pageable) {
         try{
@@ -37,6 +39,7 @@ public class MoviesBattleController {
         }
     }
 
+    @Operation(summary = "Players rating",security = {@SecurityRequirement(name = "bearer-key")})
     @GetMapping("/ratings")
     public ResponseEntity<Object> getRatings(){
         try {
@@ -47,6 +50,7 @@ public class MoviesBattleController {
         }
     }
 
+    @Operation(summary = "Answer quizzes", security = {@SecurityRequirement(name = "bearer-key")})
     @PostMapping("/quizzes")
     public ResponseEntity<Object> answerQuiz(@RequestBody QuizDTORequest quizDto) {
         try {
@@ -64,6 +68,7 @@ public class MoviesBattleController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
+    @Operation(summary = "Create player")
     @PostMapping("/users")
     public ResponseEntity<Object> createUser(@RequestBody UserDTO userDTO) {
         try {
@@ -76,6 +81,7 @@ public class MoviesBattleController {
         }
     }
 
+    @Operation(summary = "Delete player", security = {@SecurityRequirement(name = "bearer-key")})
     @PostMapping("/stop")
     public ResponseEntity<Object> stop(@RequestBody UserDTOStop userDtoStop) {
         try {

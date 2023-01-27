@@ -33,8 +33,10 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public Page<MovieDTO> searchForMoviesToMoviesBattle(Pageable pageable){
         var movieList = movieRepository.findAll();
+        var moviesDto = movieMapper.convertMovieListToMovieDtoList(movieList);
         if(!MovieUtils.quizzesHasBeenAnswered(movieList)){
-            throw new IllegalArgumentException("Você não respondeu o ultimo quiz. Por favor, responda o quiz, para poder continuar!");
+            throw new IllegalArgumentException("Você não respondeu o ultimo quiz. Por favor, responda o quiz, para poder continuar! \n" +
+                    "\n" + moviesDto.toString());
         }
         var moviesImdb = MovieUtils.searchForMoviesImdb();
         var movieDtoList = movieMapper.convertMovieArrayListToMovieDtoList(moviesImdb);

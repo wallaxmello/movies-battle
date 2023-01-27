@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI springShopOpenAPI() {
+    public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info().title("Movies Battle API")
                         .description("Movies Battle Application")
@@ -22,8 +22,7 @@ public class SwaggerConfig {
                 .externalDocs(new ExternalDocumentation()
                         .description("Movies Battle Documentation")
                         .url("https://github.com/wallaxmello/movies-battle.git"))
-                .components(new Components()
-                        .addSecuritySchemes("Bearer",
-                                new SecurityScheme().name("Authorization").type(SecurityScheme.Type.HTTP).scheme("Bearer").bearerFormat("JWT")));
+                .components(new Components().addSecuritySchemes("bearer-key",
+                new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT")));
     }
 }
