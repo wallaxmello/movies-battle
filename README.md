@@ -5,7 +5,14 @@ Endpoints:
 
 
 &nbsp;
-Obs.: Token dura 10 minutos!
+Obs.: 
+
+
+&nbsp;
+1) No login, é gerado um bearer token, para ser usado, nos outro endpoints. Seleciona na aba Authorization do postman, o type: Bearer Toke. Cola o token, no campo Token!
+2) Token dura 10 minutos!
+3) /movies : Pelo Swagger, tem que passar o size com valor 2.
+4) 
 
 &nbsp;
 Não precisam do token:
@@ -17,8 +24,6 @@ Não precisam do token:
 
 &nbsp;
 /login : Efetua o login com os dados do jogador.
-         Obs.: No login, é gerado um bearer token, para ser usado, nos outro endpoints.
-         Seleciona na aba Authorization do postman, o type: Bearer Toke. Cola o token, no campo Token!
 
 
 &nbsp;
@@ -42,3 +47,11 @@ Precisam do token:
 
 &nbsp;
 # Para mais informações, consultar o Swagger!
+
+&nbsp;
+http://localhost:8080/swagger-ui.html
+
+ou
+
+&nbsp;
+http://localhost:8080/v3/api-docs
