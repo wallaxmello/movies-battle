@@ -9,10 +9,10 @@ Obs.:
 
 
 &nbsp;
-1) No login, é gerado um bearer token, para ser usado, nos outro endpoints. Seleciona na aba Authorization do postman, o type: Bearer Toke. Cola o token, no campo Token!
-2) Token dura 10 minutos!
-3) /movies : Pelo Swagger, tem que passar o size com valor 2.
-4) 
+1) No login, é gerado um bearer token, para ser usado, nos outro endpoints.
+2) Utilizar o token no swagger(Opção Authorize) ou postman(Aba -> Authorization -> Type: Bearer Token)
+3) Token dura 10 minutos!
+4) /movies : Pelo Swagger, tem que passar o size com valor 2.
 
 &nbsp;
 Não precisam do token:
