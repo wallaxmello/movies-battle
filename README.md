@@ -13,6 +13,7 @@ Obs.:
 2) Utilizar o token no swagger(Opção Authorize) ou postman(Aba -> Authorization -> Type: Bearer Token)
 3) Token dura 10 minutos!
 4) /movies : Pelo Swagger, tem que passar o size com valor 2.
+5) Pode usar os dados dos users já existente ou criar outros! username: user1; user2; user3. password: 123.
 
 &nbsp;
 Não precisam do token:
